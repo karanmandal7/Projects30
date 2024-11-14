@@ -5,7 +5,7 @@ html {
     text-align: center;
     font-size: 10px;
 }
-
+/* Center the clock vertically and horizontally on the page */
 body {
     margin: 0;
     font-size: 2rem;
@@ -14,7 +14,7 @@ body {
     min-height: 100vh;
     align-items: center;
 }
-
+/* Style the main clock container */
 .clock {
     width: 30rem;
     height: 30rem;
@@ -28,15 +28,16 @@ body {
       inset 0 0 0 3px #EFEFEF,
       inset 0 0 10px black,
       0 0 10px rgba(0,0,0,0.2);
+    background-color: #f0f0f0;
 }
-
+/* Position the clock face */
 .clock-face {
     position: relative;
     width: 100%;
     height: 100%;
-    transform: translateY(-3px); /* account for the height of the clock hands */
+    transform: translateY(-3px);/* Slight adjustment for visual alignment */
 }
-
+/* Base styles for clock hands */
 .hand {
     width: 50%;
     height: 6px;
@@ -48,4 +49,79 @@ body {
     transition: all 0.05s;
     transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
 }
+/* Specific styles for hour hand */
+.hour-hand {
+    width: 35%;
+    right: 50%;
+    height: 6px;
+    background: #333;
+}
+/* Specific styles for minute hand */
+.min-hand {
+    width: 40%;
+    right: 50%;
+    height: 4px;
+}
+/* Specific styles for second hand */
+.second-hand {
+    height: 2px;
+    background: #ff6b6b;
+    right: 50%;
+}
 
+/* NEW: Styles for center point */
+.center-point {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #333;
+    transform: translate(-50%, -50%);
+}
+
+/*  Styles for hour markers */ /* Container for hour markers */
+.hour-marks {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+/* Style for individual hour markers */
+.hour-marker {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform-origin: 50% 50%;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+/* Create small lines for each hour marker */
+.hour-marker::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    width: 2px;
+    height: 15px;
+    background: #333;
+    transform: translateX(-50%);
+}
+
+/*  Styles for digital time display */
+.digital-time {
+    position: absolute;
+    bottom: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
